@@ -32,6 +32,9 @@ def new_neighbor(request):
             neighborhood.name = current_user
             neighborhood.save()
         return redirect('index')
+    else:
+        form = NewNeighborhoodForm()
+    return render(request, 'new_neighbor.html', {"form": form})
 
 
 def hood(request, id):
